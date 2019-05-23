@@ -1,0 +1,16 @@
+{
+  "server": {
+    "host": "0.0.0.0",
+    "port": "8080"
+  },
+  "options": {
+    "prefix": "http://localhost:8080/"
+  },
+  "postgres": {
+    "host": "db instance dns",
+    "port": "5432",
+    "user": "db instance user",
+    "password": "db instance password",
+    "db": "db instance name"
+  }
+}
