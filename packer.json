@@ -35,6 +35,18 @@
       "sudo apt-get update",
       "sudo apt-get -y upgrade",
 
+      "sudo mkdir -p /home/ubuntu/config",
+      "sudo chmod 777 /home/ubuntu/config",
+
+      "cd /home/ubuntu/config",
+      "sudo echo \"[Unit]\" >> ursho.service",
+      "sudo echo \"Description=Ursho Service\" >> ursho.service",
+      "sudo echo \"[Service]\" >> ursho.service",
+      "sudo echo \"WorkingDirectory=/home/ubuntu\" >> ursho.service",
+      "sudo echo \"Restart=always\" >> ursho.service",
+      "sudo echo \"ExecStart=/bin/ursho\" >> ursho.service",
+      "sudo mv ./ursho.service /lib/systemd/system/",
+
       "sudo apt-get install git wget -yy",
       "cd /tmp && wget https://dl.google.com/go/go1.11.linux-amd64.tar.gz",
 
@@ -57,7 +69,9 @@
 
       "cd ~",
       "rm -rf ~/go",
-      "sudo apt purge --auto-remove -yy git wget"
+      "sudo apt purge --auto-remove -yy git wget",
+
+      "sudo systemctl enable ursho.service"
     ]
   }]
 }
